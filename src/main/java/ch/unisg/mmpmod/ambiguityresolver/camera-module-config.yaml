@@ -1,0 +1,4 @@
+# camera control configuration file
+
+camera_api:
+  SAVE_DIR: "ars/MachineLearning/ml_api/captured_frames"
