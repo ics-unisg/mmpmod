@@ -24,7 +24,7 @@ The vision model uses a YOLOv11-based segmentation and scene-understanding pipel
 ## 🪄Getting started
 ### Requirements
 * Java 21
-* Python 3.13
+* Python 3.13 with cv2, pandas, ultralytics, yaml
 * A camera connected to the machine running the code
 * An MQTT topic to listen to for process events in input
 * An MQTT topic to publish the process events in output
