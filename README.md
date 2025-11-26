@@ -45,6 +45,7 @@ git clone https://github.com/ics-unisg/mmpmod.git
 * [Optional] In case of multiple connected cameras, specify which one to use by setting the respective identifier in `src/main/java/ch/unisg/mmpmod/ambiguityresolver/camera/camera.py` (line `camera = cv2.VideoCapture(0)`).
 
 **3. Run the application**
+
 `mvn spring-boot:run`
 
 
