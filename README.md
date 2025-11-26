@@ -50,7 +50,10 @@ git clone https://github.com/ics-unisg/mmpmod.git
 
 
 ## End-to-end evaluation results
-An end-to-end evaluation of the prototype was conducted in an IoT-augmented lab setup for the phlebotomy training process. The process was enacted 50 times while being monitored by a set of sensors producing IoT data; these data was abstracted into a stream of process events by activity detection services (for details, see related publication [here](https://doi.org/10.1016/j.future.2025.107987)). This stream, which includes ambiguous process events, was used as the input for the prototype.
+An end-to-end evaluation of the prototype was conducted in an IoT-augmented lab setup for the phlebotomy training process, which is depicted below.
+![Lab setup](/evaluation/lab_setup.jpeg)
+
+The process was enacted 50 times while being monitored by a set of sensors producing IoT data; these data was abstracted into a stream of process events by activity detection services (for details, see the [related publication](https://doi.org/10.1016/j.future.2025.107987)). This stream, which includes ambiguous process events, was used as the input for the prototype.
 The results of the end-to-end evaluation of the prototype are found in file `evaluation/end-to-end_disambiguation_results.xlsx`. The file contains two sheets: `notes` and `latencies`.
 
 * Sheet `notes` includes notes for each of the 50 enactments, specifying whether all ambiguities were correctly resolved, which type of misclassification types occurred in case of not correctly resolved ambiguities, and whether ambiguities caused by false sensor readings occurred.
