@@ -42,8 +42,10 @@ git clone https://github.com/ics-unisg/mmpmod.git
 * Fill out the missing values in the `application.properties` file for the input and output channels, specifying the URL for the MQTT broker, the client id, the topic where the process events in input are published, the username, and password for the connection to the broker. Note that you have to specify these values for both input and output MQTT brokers.
 * Fill out the missing values in the `application.properties` file for the path to the Python executable, specifying the location in your machine.
 * [Optional] Change the value for the keys `cameraControl.numberOfFrames` and `cameraControl.waitingTime` to specify how many frames must be captured and with which delay from each other when disambiguation is triggered.
+* [Optional] In case of multiple connected cameras, specify which one to use by setting the respective identifier in `src/main/java/ch/unisg/mmpmod/ambiguityresolver/camera/camera.py` (line `camera = cv2.VideoCapture(0)`).
 
 **3. Run the application**
+`mvn spring-boot:run`
 
 
 ## End-to-end evaluation results
