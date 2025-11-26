@@ -10,7 +10,7 @@ The prototype implements the architecture in the context of a phlebotomy trainin
 The goal of this repository is to promote replication, experimentation, and extension of the architecture.
 
 
-## Architecture and Vision Model
+## Architecture and vision model
 The architecture consists of four main components:
 
 * Ambiguity Detector
@@ -20,7 +20,7 @@ The architecture consists of four main components:
 
 The architecture is implemented in Java as a Spring Boot application using Spring Modulith. Each component is implemented in a separate package and can be easily replaced. The sub-components of the On-demand Ambiguity Resolver handling camera activation for frame capture and ML inference using the vision model are implemented in Python and invoked by the Java application via a ProcessBuilder object.
 
-The vision model uses a YOLOv11-based segmentation and scene-understanding pipeline, trained on a [phlebotomy dataset](https://zenodo.org/records/16924786) developed within the [ProAmbitIon](https://data.snf.ch/grants/grant/208497) research project, to interpret visual context relevant for disambiguation. The model is found at `ambiguityresolver/ml/YOLO-model/best.pt`.
+The vision model uses a YOLOv11-based segmentation and scene-understanding pipeline, trained on a [phlebotomy dataset](https://zenodo.org/records/16924786) developed within the [ProAmbitIon](https://data.snf.ch/grants/grant/208497) research project, to interpret visual context relevant for disambiguation. The model is found at `src/main/java/ch/unisg/mmpmod/ambiguityresolver/ml/YOLO-model/best.pt`.
 
 
 ## Getting started
@@ -44,3 +44,15 @@ git clone https://github.com/ics-unisg/mmpmod.git
 * [Optional] Change the value for the keys `cameraControl.numberOfFrames` and `cameraControl.waitingTime` to specify how many frames must be captured and with which delay from each other when disambiguation is triggered.
 
 **3. Run the application**
+
+
+## End-to-end evaluation results
+An end-to-end evaluation of the prototype was conducted in an IoT-augmented lab setup for the phlebotomy training process. The process was enacted 50 times while being monitored by a set of sensors producing IoT data; these data was abstracted into a stream of process events by activity detection services (for details, see related publication [here](https://doi.org/10.1016/j.future.2025.107987)). This stream, which includes ambiguous process events, was used as the input for the prototype.
+The results of the end-to-end evaluation of the prototype are found in file `evaluation/end-to-end_disambiguation_results.xls`. The file contains two sheets: `notes` and `latencies`.
+
+* Sheet `notes` includes notes for each of the 50 enactments, specifying whether all ambiguities were correctly resolved, which type of misclassification types occurred in case of not correctly resolved ambiguities, and whether ambiguities caused by false sensor readings occurred.
+* Sheet `latencies` lists the time required for each disambiguation, which broken down into frames capture latency (including camera activation) and activity label inference latency. Aggregate results (average, median, and standard deviation) are also indicated.
+
+
+![Example disambiguation result](/evaluation/injection_image.jpeg)
+The above figure illustrates an annotated frame showing segmentation masks, bounding boxes, and inferred label (injection) as an example of the vision-based disambiguation.
