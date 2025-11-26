@@ -51,7 +51,7 @@ An end-to-end evaluation of the prototype was conducted in an IoT-augmented lab 
 The results of the end-to-end evaluation of the prototype are found in file `evaluation/end-to-end_disambiguation_results.xls`. The file contains two sheets: `notes` and `latencies`.
 
 * Sheet `notes` includes notes for each of the 50 enactments, specifying whether all ambiguities were correctly resolved, which type of misclassification types occurred in case of not correctly resolved ambiguities, and whether ambiguities caused by false sensor readings occurred.
-* Sheet `latencies` lists the time required for each disambiguation, which broken down into frames capture latency (including camera activation) and activity label inference latency. Aggregate results (average, median, and standard deviation) are also indicated.
+* Sheet `latencies` lists the time required for each disambiguation, broken down into frames capture latency (including camera activation) and activity label inference latency. Aggregate results (average, median, and standard deviation) are also indicated.
 
 
 ![Example disambiguation result](/evaluation/injection_image.jpeg)
