@@ -10,7 +10,7 @@ The prototype implements the architecture in the context of a phlebotomy trainin
 The goal of this repository is to promote replication, experimentation, and extension of the architecture.
 
 
-## ‍💻Architecture and Vision Model
+## Architecture and Vision Model
 The architecture consists of four main components:
 
 * Ambiguity Detector
